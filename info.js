@@ -14,7 +14,8 @@ function preload() {
     GameInstance.load.image('board','img/board.png');
     GameInstance.load.image('back','img/back.png');
     GameInstance.load.image('phaserlogo','img/phaser2.png');
-    GameInstance.load.image('unitylogo','img/unitylogo.png');
+    GameInstance.load.image('unitylogo','img/SP.gif');
+    GameInstance.load.image('pac','img/pacteralogo.png');
 };
 
 function create() {
@@ -143,21 +144,20 @@ function create() {
     
     
     //Phaser (Skills)
-    this.phaserlogo = GameInstance.add.sprite(50,50,'phaserlogo');
-    this.phaserlogo.scale.setTo(0.3,0.3);
-    this.txtPhaser = GameInstance.add.text(250,70,'Phaser Framework using\nPhaser 2 aka Phaser CE\nJavaScript Based Projects\nunder [Ministry of Education]' 
+    this.phaserlogo = GameInstance.add.sprite(500,50,'phaserlogo');
+    this.phaserlogo.scale.setTo(1,1);
+    this.txtPhaser = GameInstance.add.text(50,70,'Phaser Framework using\nPhaser 2 aka Phaser CE\nJavaScript Based Projects\nunder [Ministry of Education]' 
                                            , {font: 'bold 15pt Georgia',fill:'#000000'});
-    this.txtPhaser.align = 'center'
-    this.txtPhaser1 = GameInstance.add.text(250,250,'Mathematics Interactive Triangles'
+    this.txtPhaser1 = GameInstance.add.text(50,250,'Mathematics Interactive Triangles'
                                            , {font: 'bold 12pt Georgia',fill:'#001667'});
     this.txtPhaser1.inputEnabled = true;
-    this.txtPhaser2 = GameInstance.add.text(250,290,'Electronics Resistors'
+    this.txtPhaser2 = GameInstance.add.text(50,290,'Electronics Resistors'
                                            , {font: 'bold 12pt Georgia',fill:'#001667'});
     this.txtPhaser2.inputEnabled = true;
-    this.txtPhaser3 = GameInstance.add.text(250,330,'Measurement of Units'
+    this.txtPhaser3 = GameInstance.add.text(50,330,'Measurement of Units'
                                            , {font: 'bold 12pt Georgia',fill:'#001667'});
     this.txtPhaser3.inputEnabled = true;
-    this.txtPhaser4 = GameInstance.add.text(250,370,'Free simple platformer (Personal)'
+    this.txtPhaser4 = GameInstance.add.text(50,370,'Free simple platformer (Personal)'
                                            , {font: 'bold 12pt Georgia',fill:'#001667'});
     this.txtPhaser4.inputEnabled = true;
     
@@ -169,25 +169,50 @@ function create() {
     this.txtPhaser4.visible = false;
     
     //Unity (Skills)
-    this.unitylogo = GameInstance.add.sprite(50,50,'unitylogo');
-    this.unitylogo.scale.setTo(0.14,0.14);
-    this.unitytxt = GameInstance.add.text(250,70,'Unity school projects (C#) under \n[Singapore Polytechnic]' 
+    this.unitylogo = GameInstance.add.sprite(430,75,'unitylogo');
+    this.unitylogo.scale.setTo(1,1);
+    this.unitytxt = GameInstance.add.text(50,70,'Unity school projects (C#) under \n[Singapore Polytechnic]' 
                                            , {font: 'bold 15pt Georgia',fill:'#000000'});
-    this.unitytxt.align = 'center'
-    this.unitytxt0 = GameInstance.add.text(250,150,'Vuforia - Vumarks (Mobile)'
+    this.unitytxt0 = GameInstance.add.text(50,140,'Vuforia - Vumarks (Mobile)'
                                            , {font: 'bold 12pt Georgia',fill:'#001667'});
-    this.unitytxt1 = GameInstance.add.text(250,190,'Roll the ball (Mobile)'
+    this.unitytxt1 = GameInstance.add.text(50,180,'Roll the ball (Mobile)'
                                            , {font: 'bold 12pt Georgia',fill:'#001667'});
-    this.marvel = GameInstance.add.text(250,230,'Prototyping the App under \n[Singapore Polytechnic]' 
+    this.marvel = GameInstance.add.text(50,220,'Prototyping the App under \n[Singapore Polytechnic]' 
                                            , {font: 'bold 15pt Georgia',fill:'#000000'});
-    this.marveltxt0 = GameInstance.add.text(250,300,'Prototyping Counselling App for Students'
+    this.marveltxt0 = GameInstance.add.text(50,280,'Prototyping Counselling App for Students'
                                            , {font: 'bold 12pt Georgia',fill:'#001667'});
     this.marveltxt0.inputEnabled = true;
     
-    this.others = GameInstance.add.text(250,340,'Other kind of tools used before for projects' 
+    this.others = GameInstance.add.text(50,310,'Other kind of tools used before for sch projects' 
                                            , {font: 'bold 15pt Georgia',fill:'#000000'});
-    this.otherstxt= GameInstance.add.text(250,370,'Dreamweaver - HTML, CSS\nPhotoshop, Illustrator, Paint.net\nSQL Express - Database\nBlender\nWord, Excel, Powerpoint.'
+    this.otherstxt= GameInstance.add.text(50,340,'Dreamweaver - HTML, CSS\nPhotoshop, Illustrator, Paint.net\nSQL Express - Database\nVisual Studio Code - C++ (Game Engine and 2D Game)\nOpenGL on creating polygons and simple shaders\nBlender - Model 3D Objects'
                                            , {font: 'bold 12pt Georgia',fill:'#808080'});
+    
+    //Testing (Skills)
+    this.itedays00 = GameInstance.add.sprite(500,75,'pac');
+    this.itedays00.scale.setTo(1,1);
+    this.itedays0 = GameInstance.add.text(50,70,'Health Science Authority Project\nUnder [Pacteria]' 
+                                           , {font: 'bold 15pt Georgia',fill:'#000000'});
+    this.itedays1 = GameInstance.add.text(50,150,'Test Cases' 
+                                           , {font: 'bold 15pt Georgia',fill:'#001667'});
+    this.itedays2 = GameInstance.add.text(50,190,'Test Scripts' 
+                                           , {font: 'bold 15pt Georgia',fill:'#001667'});
+    this.itedays3 = GameInstance.add.text(50,230,'Test Data' 
+                                           , {font: 'bold 15pt Georgia',fill:'#001667'});
+    this.itedays4 = GameInstance.add.text(50,270,'Test Scenarios' 
+                                           , {font: 'bold 15pt Georgia',fill:'#001667'});
+    this.itedays5 = GameInstance.add.text(50,310,'Regression Testing Tools by Pacteria/Manual Testing' 
+                                           , {font: 'bold 15pt Georgia',fill:'#001667'});
+    
+    this.itedays0.visible = false;
+    this.itedays1.visible = false;
+    this.itedays2.visible = false;
+    this.itedays3.visible = false;
+    this.itedays4.visible = false;
+    this.itedays5.visible = false;
+    this.itedays00.visible = false;
+   
+   
    
 
     
@@ -263,6 +288,7 @@ function create() {
         this.txtCircle3.visible = true;
     },this);
     
+    
     this.back.events.onInputDown.add(function(){
         this.btnAbout.visible = true;
         this.txtAbout.visible = true;
@@ -293,11 +319,19 @@ function create() {
         this.unitytxt1.alpha = 0;
         this.marvel.alpha = 0;
        this.marveltxt0.visible = false;
+        this.others.alpha = 0;
         this.otherstxt.alpha = 0;
+        this.itedays0.visible = false;
+         this.itedays1.visible = false;
+         this.itedays2.visible = false;
+         this.itedays3.visible = false;
+         this.itedays4.visible = false;
+         this.itedays5.visible = false;
+           this.itedays00.visible = false;
     },this);
      this.btnCircle0.events.onInputDown.add(function(){
         this.btnCircle1.alpha=1;
-        this.btnCircle1.alpha=1;
+        this.btnCircle2.alpha=1;
         this.btnCircle0.alpha=0.5;
         this.btnAbout.visible = false;
         this.txtAbout.visible = false;
@@ -330,12 +364,20 @@ function create() {
          this.marveltxt0.visible = false;
         this.otherstxt.alpha = 0;
         this.others.alpha = 0;
+        this.itedays0.visible = false;
+         this.itedays1.visible = false;
+         this.itedays2.visible = false;
+         this.itedays3.visible = false;
+         this.itedays4.visible = false;
+         this.itedays5.visible = false;
+            this.itedays00.visible = false;
   
     },this);
     
     this.btnCircle1.events.onInputDown.add(function(){
         this.btnCircle0.alpha=1;
         this.btnCircle1.alpha=0.5;
+          this.btnCircle2.alpha=1;
         this.btnAbout.visible = false;
         this.txtAbout.visible = false;
         this.btnSkills.visible = false;
@@ -367,7 +409,57 @@ function create() {
        this.marveltxt0.visible = true;
         this.otherstxt.alpha = 1;
         this.others.alpha = 1;
+        this.itedays0.visible = false;
+         this.itedays1.visible = false;
+         this.itedays2.visible = false;
+         this.itedays3.visible = false;
+         this.itedays4.visible = false;
+         this.itedays5.visible = false;
+           this.itedays00.visible = false;
   
+    },this);
+    this.btnCircle2.events.onInputDown.add(function(){
+             this.btnCircle0.alpha=1;
+        this.btnCircle1.alpha=1;
+         this.btnCircle2.alpha=0.5;
+        this.btnAbout.visible = false;
+        this.txtAbout.visible = false;
+        this.btnSkills.visible = false;
+        this.txtSkills.visible = false;
+        this.btnContact.visible = false;
+        this.txtContact.visible = false;
+        this.title.alpha = 0;
+        this.desc.alpha = 0;
+        this.back.visible = true;
+        this.phaserlogo.visible = false;
+        this.txtPhaser.visible = false;
+        this.txtPhaser1.visible = false;
+        this.txtPhaser2.visible = false;
+        this.txtPhaser3.visible = false;
+        this.txtPhaser4.visible = false;
+        this.btnCircle0.visible = true;
+        this.txtCircle0.visible = true;
+        this.btnCircle1.visible = true;
+        this.txtCircle1.visible = true;
+        this.btnCircle2.visible = true;
+        this.txtCircle2.visible = true;
+        this.btnCircle3.visible = true;
+        this.txtCircle3.visible = true;
+        this.unitylogo.alpha = 0;
+        this.unitytxt.alpha = 0;
+        this.unitytxt0.alpha = 0;
+        this.unitytxt1.alpha = 0;
+        this.marvel.alpha = 0;
+       this.marveltxt0.visible = false;
+        this.otherstxt.alpha = 0;
+        this.others.alpha = 0;
+        this.itedays0.visible = true;
+         this.itedays1.visible = true;
+         this.itedays2.visible = true;
+         this.itedays3.visible = true;
+         this.itedays4.visible = true;
+         this.itedays5.visible = true;
+           this.itedays00.visible = true;
     },this);
   
     
