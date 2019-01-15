@@ -183,6 +183,12 @@ function create() {
     this.marveltxt0 = GameInstance.add.text(250,330,'Prototyping Counselling App for Students'
                                            , {font: 'bold 12pt Georgia',fill:'#001667'});
     this.marveltxt0.inputEnabled = true;
+    
+    this.others = GameInstance.add.text(250,360,'Other kind of tools used before for projects' 
+                                           , {font: 'bold 15pt Georgia',fill:'#000000'});
+    this.otherstxt= GameInstance.add.text(250,400,'Dreamweaver - HTML, CSS\nPhotoshop, Illustrator, Paint.net\nBlender\nWord, Excel, Powerpoint.'
+                                           , {font: 'bold 12pt Georgia',fill:'#808080'});
+   
 
     
     this.unitylogo.alpha = 0;
@@ -190,8 +196,9 @@ function create() {
     this.unitytxt0.alpha = 0;
     this.unitytxt1.alpha = 0;
     this.marvel.alpha = 0;
-    this.marveltxt0.alpha = 0;
-  
+    this.marveltxt0.visible = false;
+    this.others.alpha = 0;
+    this.otherstxt.alpha = 0;
    
     
     
@@ -285,7 +292,8 @@ function create() {
         this.unitytxt0.alpha = 0;
         this.unitytxt1.alpha = 0;
         this.marvel.alpha = 0;
-        this.marveltxt0.alpha = 0;
+       this.marveltxt0.visible = false;
+        this.otherstxt.alpha = 0;
     },this);
      this.btnCircle0.events.onInputDown.add(function(){
         this.btnCircle1.alpha=1;
@@ -319,7 +327,9 @@ function create() {
         this.unitytxt0.alpha = 0;
         this.unitytxt1.alpha = 0;
         this.marvel.alpha = 0;
-        this.marveltxt0.alpha = 0;
+         this.marveltxt0.visible = false;
+        this.otherstxt.alpha = 0;
+        this.others.alpha = 0;
   
     },this);
     
@@ -354,7 +364,9 @@ function create() {
         this.unitytxt0.alpha = 1;
         this.unitytxt1.alpha = 1;
         this.marvel.alpha = 1;
-        this.marveltxt0.alpha = 1;
+       this.marveltxt0.visible = true;
+        this.otherstxt.alpha = 1;
+        this.others.alpha = 1;
   
     },this);
   
