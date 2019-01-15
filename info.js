@@ -11,7 +11,7 @@ function init() {
     
 function preload() {
     GameInstance.load.image('button','img/button.png');
-    GameInstance.load.image('board','img/board.jpg');
+    GameInstance.load.image('board','img/board.png');
     GameInstance.load.image('back','img/back.png');
     GameInstance.load.image('phaserlogo','img/phaser2.png');
     GameInstance.load.image('unitylogo','img/unitylogo.png');
@@ -20,7 +20,7 @@ function preload() {
 function create() {
     //Background
     this.board = GameInstance.add.sprite(0,0,'board');
-    this.board.scale.setTo(1,1);
+    this.board.scale.setTo(800/932,600/542);
     
     //Back arrow
     this.back = GameInstance.add.button(50,500,'back');
@@ -178,15 +178,15 @@ function create() {
                                            , {font: 'bold 12pt Georgia',fill:'#001667'});
     this.unitytxt1 = GameInstance.add.text(250,190,'Roll the ball (Mobile)'
                                            , {font: 'bold 12pt Georgia',fill:'#001667'});
-    this.marvel = GameInstance.add.text(250,240,'Prototyping the App under \n[Singapore Polytechnic]' 
+    this.marvel = GameInstance.add.text(250,230,'Prototyping the App under \n[Singapore Polytechnic]' 
                                            , {font: 'bold 15pt Georgia',fill:'#000000'});
-    this.marveltxt0 = GameInstance.add.text(250,330,'Prototyping Counselling App for Students'
+    this.marveltxt0 = GameInstance.add.text(250,300,'Prototyping Counselling App for Students'
                                            , {font: 'bold 12pt Georgia',fill:'#001667'});
     this.marveltxt0.inputEnabled = true;
     
-    this.others = GameInstance.add.text(250,360,'Other kind of tools used before for projects' 
+    this.others = GameInstance.add.text(250,340,'Other kind of tools used before for projects' 
                                            , {font: 'bold 15pt Georgia',fill:'#000000'});
-    this.otherstxt= GameInstance.add.text(250,400,'Dreamweaver - HTML, CSS\nPhotoshop, Illustrator, Paint.net\nBlender\nWord, Excel, Powerpoint.'
+    this.otherstxt= GameInstance.add.text(250,370,'Dreamweaver - HTML, CSS\nPhotoshop, Illustrator, Paint.net\nSQL Express - Database\nBlender\nWord, Excel, Powerpoint.'
                                            , {font: 'bold 12pt Georgia',fill:'#808080'});
    
 
