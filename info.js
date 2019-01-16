@@ -16,6 +16,7 @@ function preload() {
     GameInstance.load.image('phaserlogo','img/phaser2.png');
     GameInstance.load.image('unitylogo','img/SP.gif');
     GameInstance.load.image('pac','img/pacteralogo.png');
+    GameInstance.load.image('icon','img/icon.png');
 };
 
 function create() {
@@ -37,8 +38,8 @@ function create() {
             textAlign: 'center',
             type: PhaserInput.InputType.text
         });
-        this.txtpassword = GameInstance.add.text(GameInstance.world.centerX-40,GameInstance.world.centerY+24,"Password", {font: 'bold 15pt Georgia'});
-        this.password = GameInstance.add.inputField(350,350, {
+    this.txtpassword = GameInstance.add.text(GameInstance.world.centerX-40,GameInstance.world.centerY+24,"Password", {font: 'bold 15pt Georgia'});
+    this.password = GameInstance.add.inputField(350,350, {
             width: 120,
             height: 50,
             font: '40px Georgia',
@@ -48,63 +49,41 @@ function create() {
         });
     
     this.button = GameInstance.add.button(350,450,'button');
-    this.button.scale.setTo(0.08,0.08);
+    this.button.scale.setTo(0,0);
     
     //Phaser.Text
-    this.title = GameInstance.add.text(GameInstance.world.centerX,GameInstance.world.centerY-100,"Hello!", {font: 'bold 100pt Georgia',fill:'#000000'});
+    this.title = GameInstance.add.text(100,100,"ID", {font: 'bold 60pt Georgia',fill:'#000000'});
     this.title.anchor.setTo(0.5,0.5);
-    this.desc=GameInstance.add.text(GameInstance.world.centerX,GameInstance.world.centerY,"My name is Joshua\nit's all about improvising and improving.",{font: 'bold 20pt Georgia',align: 'center',fill:'#000000'});
+    this.desc=GameInstance.add.text(380,250,"Name: Joshua Teo \nIT Domain: Front-end Programmer \n                        Quality Assurance \nConcurrent: Full-Stack Developer\n                          Model 3D Objects \n Interest: Finding bugs, vulnerabilities and errors, Writting cases and reports. \n 3 things describe about me: Determined, Focus and Interested \n Quotes: Always improvising and improving.",{font: 'bold 12pt Georgia',align: '',fill:'#000000'});
     this.desc.anchor.setTo(0.5,0.5);
     this.title.alpha = 0;
     this.desc.alpha = 0;
+    this.desc.addColor('#003366',6);
+    this.desc.addColor('#000000',16);
+    this.desc.addColor('#003366',27);
+    this.desc.addColor('#000000',91);
+    this.desc.addColor('#003366',103);
+    this.desc.addColor('#000000',167);
+    this.desc.addColor('#003366',176);
+    this.desc.addColor('#000000',247);
+    this.desc.addColor('#003366',276);
+    this.desc.addColor('#000000',310);
+    this.desc.addColor('#003366',318);
     
-    //Phaser.Graphic
-    this.drawCircle = new Phaser.Graphics(GameInstance,0,0); // use Phaser.Graphics
-    this.drawCircle.lineStyle(1,0xffffff,1); //Line width
-    this.drawCircle.beginFill(0xd3d3d3 ) //Color
-    this.drawCircle.drawRoundedRect(0,0,120,100); //Draw out
-    this.drawCircle.endFill(); //End
-    this.circleTexture = this.drawCircle.generateTexture(); //Make the graphics into texture.
-    this.btnAbout = GameInstance.add.button(150,370,this.circleTexture);
-    this.txtAbout = GameInstance.add.text(170,400,"About");
-    this.btnAbout.visible = false;
-    this.btnAbout.alpha = 0;
-    this.txtAbout.alpha = 0;
-    //Phaser.Graphic
-    this.drawCircle = new Phaser.Graphics(GameInstance,0,0); // use Phaser.Graphics
-    this.drawCircle.lineStyle(1,0xffffff,1); //Line width
-    this.drawCircle.beginFill(0xd3d3d3) //Color
-    this.drawCircle.drawRoundedRect(0,0,120,100); //Draw out
-    this.drawCircle.endFill(); //End
-    this.circleTexture = this.drawCircle.generateTexture(); //Make the graphics into texture.
-    this.btnSkills = GameInstance.add.button(350,370,this.circleTexture);
-    this.txtSkills = GameInstance.add.text(360,400,"Projects");
-    this.btnSkills.visible = false;
-    this.btnSkills.alpha = 0;
-    this.txtSkills.alpha = 0;
+    this.icon = GameInstance.add.button(540,350,'icon');
+    this.icon.scale.setTo(0.3,0.3);
+    this.icon.visible = false;
     
-    //Phaser.Graphic
-    this.drawCircle = new Phaser.Graphics(GameInstance,0,0); // use Phaser.Graphics
-    this.drawCircle.lineStyle(1,0xffffff,1); //Line width
-    this.drawCircle.beginFill(0xd3d3d3) //Color
-    this.drawCircle.drawRoundedRect(0,0,120,100); //Draw out
-    this.drawCircle.endFill(); //End
-    this.circleTexture = this.drawCircle.generateTexture(); //Make the graphics into texture.
-    this.btnContact= GameInstance.add.button(550,370,this.circleTexture);
-    this.txtContact = GameInstance.add.text(560,400,"Contact");
-    this.btnContact.visible = false;
-    this.btnContact.alpha = 0;
-    this.txtContact.alpha = 0;
     
-    //Phaser.Graphic
+    //Phaser.Graphics to texture
     this.drawCircle = new Phaser.Graphics(GameInstance,0,0); // use Phaser.Graphics
     this.drawCircle.lineStyle(1,0xffffff,1); //Line width
     this.drawCircle.beginFill(0xd3d3d3) //Color
     this.drawCircle.drawCircle(0,0,50); //Draw out
     this.drawCircle.endFill(); //End
     this.circleTexture = this.drawCircle.generateTexture(); //Make the graphics into texture.
-    this.btnCircle0 = GameInstance.add.button(150,500,this.circleTexture);
-    this.txtCircle0 = GameInstance.add.text(167,510,"1");
+    this.btnCircle0 = GameInstance.add.button(150+100,500,this.circleTexture);
+    this.txtCircle0 = GameInstance.add.text(167+100,510,"2");
     this.btnCircle0.visible = false;
     this.txtCircle0.visible = false;
     
@@ -114,8 +93,8 @@ function create() {
     this.drawCircle.drawCircle(0,0,50); //Draw out
     this.drawCircle.endFill(); //End
     this.circleTexture = this.drawCircle.generateTexture(); //Make the graphics into texture.
-    this.btnCircle1 = GameInstance.add.button(150+100,500,this.circleTexture);
-    this.txtCircle1 = GameInstance.add.text(167+100,510,"2");
+    this.btnCircle1 = GameInstance.add.button(150+200,500,this.circleTexture);
+    this.txtCircle1 = GameInstance.add.text(167+200,510,"3");
     this.btnCircle1.visible = false;
     this.txtCircle1.visible = false;
     
@@ -125,8 +104,8 @@ function create() {
     this.drawCircle.drawCircle(0,0,50); //Draw out
     this.drawCircle.endFill(); //End
     this.circleTexture = this.drawCircle.generateTexture(); //Make the graphics into texture.
-    this.btnCircle2 = GameInstance.add.button(150+200,500,this.circleTexture);
-    this.txtCircle2 = GameInstance.add.text(167+200,510,"3");
+    this.btnCircle2 = GameInstance.add.button(150+300,500,this.circleTexture);
+    this.txtCircle2 = GameInstance.add.text(167+300,510,"4");
     this.btnCircle2.visible = false;
     this.txtCircle2.visible = false;
     
@@ -136,8 +115,8 @@ function create() {
     this.drawCircle.drawCircle(0,0,50); //Draw out
     this.drawCircle.endFill(); //End
     this.circleTexture = this.drawCircle.generateTexture(); //Make the graphics into texture.
-    this.btnCircle3 = GameInstance.add.button(150+300,500,this.circleTexture);
-    this.txtCircle3 = GameInstance.add.text(167+300,510,"4");
+    this.btnCircle3 = GameInstance.add.button(150,500,this.circleTexture);
+    this.txtCircle3 = GameInstance.add.text(167,510,"1");
     this.btnCircle3.visible = false;
     this.txtCircle3.visible = false;
   
@@ -194,15 +173,15 @@ function create() {
     this.itedays0 = GameInstance.add.text(50,70,'Health Science Authority Project\nUnder [Pacteria]' 
                                            , {font: 'bold 15pt Georgia',fill:'#000000'});
     this.itedays1 = GameInstance.add.text(50,150,'Test Cases' 
-                                           , {font: 'bold 15pt Georgia',fill:'#001667'});
+                                           , {font: 'bold 12pt Georgia',fill:'#001667'});
     this.itedays2 = GameInstance.add.text(50,190,'Test Scripts' 
-                                           , {font: 'bold 15pt Georgia',fill:'#001667'});
+                                           , {font: 'bold 12pt Georgia',fill:'#001667'});
     this.itedays3 = GameInstance.add.text(50,230,'Test Data' 
-                                           , {font: 'bold 15pt Georgia',fill:'#001667'});
+                                           , {font: 'bold 12pt Georgia',fill:'#001667'});
     this.itedays4 = GameInstance.add.text(50,270,'Test Scenarios' 
-                                           , {font: 'bold 15pt Georgia',fill:'#001667'});
+                                           , {font: 'bold 12pt Georgia',fill:'#001667'});
     this.itedays5 = GameInstance.add.text(50,310,'Regression Testing Tools by Pacteria/Manual Testing' 
-                                           , {font: 'bold 15pt Georgia',fill:'#001667'});
+                                           , {font: 'bold 12pt Georgia',fill:'#001667'});
     
     this.itedays0.visible = false;
     this.itedays1.visible = false;
@@ -210,6 +189,7 @@ function create() {
     this.itedays3.visible = false;
     this.itedays4.visible = false;
     this.itedays5.visible = false;
+    this.itedays00.visible = false;
     this.itedays00.visible = false;
    
    
@@ -225,50 +205,20 @@ function create() {
     this.others.alpha = 0;
     this.otherstxt.alpha = 0;
    
-    
-    
+   
     //Phaser Tween
     this.tweenTitle = GameInstance.add.tween(this.title).to({alpha:1},1500,Phaser.Easing.Linear.None);
     this.tweenDesc = GameInstance.add.tween(this.desc).to({alpha:1},1500,Phaser.Easing.Linear.None);
-    this.tweenBtnAbout = GameInstance.add.tween(this.btnAbout).to({alpha:1},1500,Phaser.Easing.Linear.None);
-    this.tweenTxtAbout = GameInstance.add.tween(this.txtAbout).to({alpha:1},1500,Phaser.Easing.Linear.None);
-    this.tweenBtnSkills = GameInstance.add.tween(this.btnSkills).to({alpha:1},1500,Phaser.Easing.Linear.None);
-    this.tweenTxtSkills = GameInstance.add.tween(this.txtSkills).to({alpha:1},1500,Phaser.Easing.Linear.None);
-    this.tweenBtnContact = GameInstance.add.tween(this.btnContact).to({alpha:1},1500,Phaser.Easing.Linear.None);
-    this.tweenTxtContact = GameInstance.add.tween(this.txtContact).to({alpha:1},1500,Phaser.Easing.Linear.None);
-    
+    this.tweenIcon = GameInstance.add.tween(this.icon).to({alpha:1},1500,Phaser.Easing.Linear.None);
+  
+
+  
     this.button.events.onInputDown.add(function(){
-        if (this.name == 'Josh' || this.password.value == '2504') {
-            this.name.visible = false;
-            this.password.visible = false;
-            this.txtname.visible = false;
-            this.txtpassword.visible = false;
-            this.button.visible = false;
-            this.tweenTitle.start();
-            this.tweenTitle.onComplete.add(function(){
-                this.tweenDesc.start();
-            },this);
-            this.tweenDesc.onComplete.add(function(){
-                 this.btnAbout.visible = true;
-                 this.btnSkills.visible = true;
-                 this.btnContact.visible = true;
-                this.tweenBtnAbout.start();
-                this.tweenTxtAbout.start();
-                this.tweenBtnSkills.start();
-                this.tweenTxtSkills.start(); 
-                this.tweenBtnContact.start(); 
-                this.tweenTxtContact.start(); 
-            },this);
-        }
+        
     },this);
     
-    this.btnSkills.events.onInputDown.add(function(){
-        this.btnAbout.visible = false;
-        this.txtAbout.visible = false;
-        this.btnSkills.visible = false;
-        this.txtSkills.visible = false;
-        this.btnContact.visible = false;
-        this.txtContact.visible = false;
+    this.icon.events.onInputDown.add(function(){
+        this.icon.visible = false
         this.title.alpha = 0;
         this.desc.alpha = 0;
         this.back.visible = true;
@@ -290,12 +240,7 @@ function create() {
     
     
     this.back.events.onInputDown.add(function(){
-        this.btnAbout.visible = true;
-        this.txtAbout.visible = true;
-        this.btnSkills.visible = true;
-        this.txtSkills.visible = true;
-        this.btnContact.visible = true;
-        this.txtContact.visible = true;
+        this.icon.visible = true
         this.title.alpha = 1;
         this.desc.alpha = 1;
         this.back.visible = false;
@@ -333,12 +278,7 @@ function create() {
         this.btnCircle1.alpha=1;
         this.btnCircle2.alpha=1;
         this.btnCircle0.alpha=0.5;
-        this.btnAbout.visible = false;
-        this.txtAbout.visible = false;
-        this.btnSkills.visible = false;
-        this.txtSkills.visible = false;
-        this.btnContact.visible = false;
-        this.txtContact.visible = false;
+        this.icon.visible = false;
         this.title.alpha = 0;
         this.desc.alpha = 0;
         this.back.visible = true;
@@ -378,12 +318,7 @@ function create() {
         this.btnCircle0.alpha=1;
         this.btnCircle1.alpha=0.5;
           this.btnCircle2.alpha=1;
-        this.btnAbout.visible = false;
-        this.txtAbout.visible = false;
-        this.btnSkills.visible = false;
-        this.txtSkills.visible = false;
-        this.btnContact.visible = false;
-        this.txtContact.visible = false;
+        this.icon.visible = true;
         this.title.alpha = 0;
         this.desc.alpha = 0;
         this.back.visible = true;
@@ -422,12 +357,7 @@ function create() {
              this.btnCircle0.alpha=1;
         this.btnCircle1.alpha=1;
          this.btnCircle2.alpha=0.5;
-        this.btnAbout.visible = false;
-        this.txtAbout.visible = false;
-        this.btnSkills.visible = false;
-        this.txtSkills.visible = false;
-        this.btnContact.visible = false;
-        this.txtContact.visible = false;
+        this.icon.visible = true;
         this.title.alpha = 0;
         this.desc.alpha = 0;
         this.back.visible = true;
@@ -479,33 +409,37 @@ function create() {
        window.location.href = "https://marvelapp.com/6c943hb";
     },this);
     
+    this.login = false;
+    
 };
     
 function update() {
-    if (this.btnAbout.input.pointerOver()) 
+       if (this.icon.input.pointerOver()) 
     {
-        this.btnAbout.input.useHandCursor = true;
-        this.btnAbout.alpha = 0.5;
+        this.icon.input.useHandCursor = true;
+        this.icon.alpha = 0.5;
     }
-    else if (this.btnAbout.input.pointerOut()){
-        this.btnAbout.alpha = 1;
+    else if (this.icon.input.pointerOut()){
+        this.icon.alpha = 1;
     }
-    if (this.btnSkills.input.pointerOver()) 
-    {
-        this.btnSkills.input.useHandCursor = true;
-        this.btnSkills.alpha = 0.5;
-    }
-    else if (this.btnSkills.input.pointerOut()){
-        this.btnSkills.alpha = 1;
-    }
-    if (this.btnContact.input.pointerOver()) 
-    {
-        this.btnContact.input.useHandCursor = true;
-        this.btnContact.alpha = 0.5;
-    }
-    else if (this.btnContact.input.pointerOut()){
-        this.btnContact.alpha = 1;
-    }
+    
+    
+    if (this.name.value == 'Josh' && this.password.value == '2504' && this.login == false ) {
+            
+            this.name.visible = false;
+            this.password.visible = false;
+            this.txtname.visible = false;
+            this.txtpassword.visible = false;
+            this.button.visible = false;
+            this.tweenTitle.start();
+            this.tweenTitle.onComplete.addOnce(function(){
+                this.tweenDesc.start();
+            },this);
+            this.tweenDesc.onComplete.addOnce(function(){
+                this.icon.visible = true;
+            },this);
+        this.login = true;
+        }
 };
 })()
 
