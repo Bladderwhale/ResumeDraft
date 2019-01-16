@@ -351,6 +351,7 @@ function create() {
          this.itedays4.visible = false;
          this.itedays5.visible = false;
            this.itedays00.visible = false;
+        this.icon.visible = false;
   
     },this);
     this.btnCircle2.events.onInputDown.add(function(){
@@ -390,6 +391,7 @@ function create() {
          this.itedays4.visible = true;
          this.itedays5.visible = true;
            this.itedays00.visible = true;
+        this.icon.visible = false;
     },this);
   
     
@@ -410,6 +412,8 @@ function create() {
     },this);
     
     this.login = false;
+    this.user = getCookie("username")
+    this.name.setText(this.user);
     
 };
     
@@ -425,7 +429,7 @@ function update() {
     
     
     if (this.name.value == 'Josh' && this.password.value == '2504' && this.login == false ) {
-            
+            setCookie("username",this.name.value,30);
             this.name.visible = false;
             this.password.visible = false;
             this.txtname.visible = false;
@@ -442,5 +446,29 @@ function update() {
         }
 };
 })()
+
+function setCookie(cname,cvalue,exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires=" + d.toGMTString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    console.log(cvalue);
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
 
 
